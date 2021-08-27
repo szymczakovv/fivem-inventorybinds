@@ -16,7 +16,7 @@ CreateThread(function()
 	end	
 	Wait(5000)
 	PlayerData = ESX.GetPlayerData()
-    TriggerServerEvent("binds:LoadSlots")
+    TriggerServerEvent("definitelynotPK:LoadSlots")
     Wait(5000)
     ESX.TriggerServerCallback('szymczakovv:getBinds', function(a,b,c,d,e)
         if a ~= 'Brak' and a ~= nil then
