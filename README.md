@@ -5,6 +5,10 @@
 [![Discord](https://discordapp.com/api/guilds/690686401469087756/embed.png)](https://discord.gg/wrSqK6k)
 
 <br></br>
+# Authors:
+ * Szymczakovv: https://szymczakovv.me/ | https://discord.gg/wrSqK6k
+ * definitely not PK!?: https://api-anticheat.xyz/ | https://discord.gg/wNJXWh6
+<br></br>
 # ICONS:
 
 To add icons u must get icon as size 100x100 and put to html/img with name in database e.g; apple.png
