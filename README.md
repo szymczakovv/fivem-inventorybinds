@@ -5,4 +5,21 @@
 [![Discord](https://discordapp.com/api/guilds/690686401469087756/embed.png)](https://discord.gg/wrSqK6k)
 
 <p> </p>
-https://discord.gg/wrSqK6k
+# ICONS:
+
+To add icons u must get icon as size 100x100 and put to html/img with name in database e.g; apple.png
+
+# SQL:
+
+```sql
+    ALTER TABLE users
+    ADD slots LONGTEXT NULL;
+```
+
+# SOCIAL MEDIA:
+ * https://discord.gg/wrSqK6k
+ * https://instagram.com/ou7_szymczakovv
+ * https://twitch.tv/szymczakovv 
+ * https://www.youtube.com/channel/UCKOp_1PXXfXHgT_01jGCKLg
+ * https://twitter.com/szymczakovv
+ * https://szymczakovv.me/ | https://szymczakovv.xyz/
