@@ -9,6 +9,11 @@
  * Szymczakovv: https://szymczakovv.me/ | https://discord.gg/wrSqK6k
  * definitely not PK!?: https://api-anticheat.xyz/ | https://discord.gg/wNJXWh6
 <br></br>
+
+# Requirements:
+ * esx_weaponsync
+ * es_extended
+
 # ICONS:
 
 To add icons u must get icon as size 100x100 and put to html/img with name in database e.g; apple.png
