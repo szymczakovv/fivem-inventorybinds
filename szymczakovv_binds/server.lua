@@ -1,6 +1,5 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
 local InventorySlots = {}
 
 local settings = {
@@ -42,7 +41,7 @@ LoadSlots = function(source)
 	local PreSlots = {}
 	
 	MySQL.Async.fetchAll("SELECT identifier, slots FROM users WHERE identifier = @identifier", {
-		["@identifier"] = GetPlayerIdentifiers(source)[1]
+		["@identifier"] = xPlayer.getIdentifier()
 	}, function(result)
 
 		if result[1].slots ~= nil then
@@ -171,7 +170,7 @@ RegisterItemToSlot = function(source, slot_out, item)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	for i=1, #InventorySlots, 1 do
 		local sloty = InventorySlots[i]
-		if ((tostring(sloty.identifier)) == tostring(GetPlayerIdentifiers(source)[1])) then
+		if ((tostring(sloty.identifier)) == tostring(xPlayer.getIdentifier())) then
 			local data = slot_out
 			if data == 'first' then
 				sloty.first = item
@@ -185,7 +184,7 @@ RegisterItemToSlot = function(source, slot_out, item)
 				sloty.fifth = item
 			end
 
-			UpdateSlotsDB(sloty, item, GetPlayerIdentifiers(source)[1], _source)
+			UpdateSlotsDB(sloty, item, xPlayer.getIdentifier(), _source)
 		end
 	end
 end
@@ -208,7 +207,7 @@ DeleteFromSlot = function(source, identifier, slot_out)
 			elseif data == 'fifth' then
 				sloty.fifth = "Brak"
 			end
-			UpdateSlotsDB(sloty, item, GetPlayerIdentifiers(source)[1], _source)
+			UpdateSlotsDB(sloty, item, xPlayer.getIdentifier(), _source)
 		end
 	end	
 end
@@ -234,19 +233,19 @@ RegisterServerEvent('szymczakovv:UseItemFromBind')
 AddEventHandler('szymczakovv:UseItemFromBind', function(num)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	UseSlot(_source, GetPlayerIdentifiers(source)[1], num)
+	UseSlot(_source, xPlayer.getIdentifier(), num)
 end)
 
 RegisterServerEvent('szymczakovv:deleteBind')
 AddEventHandler('szymczakovv:deleteBind', function(num)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	DeleteFromSlot(_source, GetPlayerIdentifiers(source)[1], num)
+	DeleteFromSlot(_source, xPlayer.getIdentifier(), num)
 end)
 
 ESX.RegisterServerCallback('szymczakovv:getBinds', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local data = SelectSlot(GetPlayerIdentifiers(source)[1])
+	local data = SelectSlot(xPlayer.getIdentifier())
 	if data ~= nil then
 		cb(data.first, data.second, data.third, data.fourth, data.fifth)
 	else
