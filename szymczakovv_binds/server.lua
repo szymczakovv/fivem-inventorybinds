@@ -84,8 +84,8 @@ LoadSlots = function(source)
 	return PreSlots
 end
 
-RegisterNetEvent("binds:LoadSlots")
-AddEventHandler("binds:LoadSlots", function()
+RegisterNetEvent("definitelynotPK:LoadSlots")
+AddEventHandler("definitelynotPK:LoadSlots", function()
 	local _source = source
 	local slots = LoadSlots(_source)
 
