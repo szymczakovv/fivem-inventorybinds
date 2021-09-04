@@ -44,26 +44,7 @@ To add icons u must get icon as size 100x100 and put to html/img with name in da
  * Go to line: 759 and add this function;
 ```
   local Weapons = { --// here is list of weapons can add to binds
-      'WEAPON_PISTOL',
-      'WEAPON_CERAMICPISTOL',
-      'WEAPON_KNIFE',
-      'WEAPON_PISTOL_MK2',
-      'WEAPON_SNSPISTOL_MK2',
-      'WEAPON_VINTAGEPISTOL',
-      'WEAPON_SNSPISTOL',
-      'WEAPON_COMBATPISTOL',
-      'WEAPON_NIGHTSTICK',
-      'WEAPON_KNIFE',
-      'WEAPON_DAGGER',
-      'WEAPON_BAT',
-      'WEAPON_BOTTLE',
-      'WEAPON_FLASHLIGHT',
-      'WEAPON_SWITCHBLADE',
-      'WEAPON_STUNGUN',
-      'WEAPON_SNSPISTOL',
-      'WEAPON_MACHETE',
-      'WEAPON_HEAVYPISTOL',
-      'WEAPON_REVOLVER'
+      'pistol',
   }
   CheckWeapons = function(item)
     local send = false	
