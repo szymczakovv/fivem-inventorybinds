@@ -13,26 +13,7 @@ local settings = {
 		[5] = 0,
 	},
     weapons = {
-        'WEAPON_PISTOL',
-        'WEAPON_CERAMICPISTOL',
-        'WEAPON_KNIFE',
-        'WEAPON_PISTOL_MK2',
-        'WEAPON_SNSPISTOL_MK2',
-        'WEAPON_VINTAGEPISTOL',
-        'WEAPON_SNSPISTOL',
-        'WEAPON_COMBATPISTOL',
-        'WEAPON_NIGHTSTICK',
-        'WEAPON_KNIFE',
-        'WEAPON_DAGGER',
-        'WEAPON_BAT',
-        'WEAPON_BOTTLE',
-        'WEAPON_FLASHLIGHT',
-        'WEAPON_SWITCHBLADE',
-        'WEAPON_STUNGUN',
-        'WEAPON_SNSPISTOL',
-        'WEAPON_MACHETE',
-        'WEAPON_HEAVYPISTOL',
-        'WEAPON_REVOLVER'
+        'pistol',
     }
 }
 
