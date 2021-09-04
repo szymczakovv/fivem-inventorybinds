@@ -65,54 +65,54 @@ To add icons u must get icon as size 100x100 and put to html/img with name in da
  * Now go to line 1007 and add this function;
 ```
 openBindsMenu = function(datavalue)
-	local item = datavalue
-	ESX.UI.Menu.CloseAll()
+    local item = datavalue
+    ESX.UI.Menu.CloseAll()
 
-	local elements = {}
-	
-	ESX.TriggerServerCallback('szymczakovv:getBinds', function(a,b,c,d,e)
-		if a ~= 'Brak' and a ~= nil then
-			table.insert(elements, { label = '[1] - Przypisany: '..tostring(a), what = 'first' })
-		else
-			table.insert(elements, { label = '[1] - Wolne', what = 'first' })
-		end
-		if b ~= 'Brak' and b ~= nil then
-			table.insert(elements, { label = '[2] - Przypisany: '..tostring(b), what = 'second' })
-		else
-			table.insert(elements, { label = '[2] - Wolne', what = 'second' })
-		end
-		if c ~= 'Brak' and c ~= nil then
-			table.insert(elements, { label = '[3] - Przypisany: '..tostring(c), what = 'third' })
-		else
-			table.insert(elements, { label = '[3] - Wolne', what = 'third' })
-		end
-		if d ~= 'Brak' and d ~= nil then
-			table.insert(elements, { label = '[4] - Przypisany: '..tostring(d), what = 'fourth' })
-		else
-			table.insert(elements, { label = '[4] - Wolne', what = 'fourth'})
-		end
-		if e ~= 'Brak' and e ~= nil then
-			table.insert(elements, { label = '[5] - Przypisany: '..tostring(e), what = 'fifth'})
-		else
-			table.insert(elements, { label = '[5] - Wolne', what = 'fifth'})
-		end
-	end)
+    local elements = {}
 
-	Wait(500)
+    ESX.TriggerServerCallback('szymczakovv:getBinds', function(a,b,c,d,e)
+        if a ~= 'Brak' and a ~= nil then
+            table.insert(elements, { label = '[1] - Assigned: '..tostring(a), what = 'first' })
+        else
+            table.insert(elements, { label = '[1] - None', what = 'first' })
+        end
+        if b ~= 'Brak' and b ~= nil then
+            table.insert(elements, { label = '[2] - Assigned: '..tostring(b), what = 'second' })
+        else
+            table.insert(elements, { label = '[2] - None', what = 'second' })
+        end
+        if c ~= 'Brak' and c ~= nil then
+            table.insert(elements, { label = '[3] - Assigned: '..tostring(c), what = 'third' })
+        else
+            table.insert(elements, { label = '[3] - None', what = 'third' })
+        end
+        if d ~= 'Brak' and d ~= nil then
+            table.insert(elements, { label = '[4] - Assigned: '..tostring(d), what = 'fourth' })
+        else
+            table.insert(elements, { label = '[4] - None', what = 'fourth'})
+        end
+        if e ~= 'Brak' and e ~= nil then
+            table.insert(elements, { label = '[5] - Assigned: '..tostring(e), what = 'fifth'})
+        else
+            table.insert(elements, { label = '[5] - None', what = 'fifth'})
+        end
+    end)
 
-	ESX.UI.Menu.Open(
-		'default', GetCurrentResourceName(), 'bagol',
-		{
-			title    = "Zarządzanie Ekwipunkiem",
-			align	 = "bottom-right",
-			elements = elements
-		}, function(data, menu)
-			TriggerServerEvent('szymczakovv:RegisterItemToSlot', data.current.what, item)
-			openBindsMenu(item)
-		end,
-	function(data, menu)
-		menu.close()
-	end)
+    Wait(500)
+
+    ESX.UI.Menu.Open(
+        'default', GetCurrentResourceName(), 'bagol',
+        {
+            title    = "Bind Management",
+            align     = "bottom-right",
+            elements = elements
+        }, function(data, menu)
+            TriggerServerEvent('szymczakovv:RegisterItemToSlot', data.current.what, item)
+            openBindsMenu(item)
+        end,
+    function(data, menu)
+        menu.close()
+    end)
 end
 ```
 
