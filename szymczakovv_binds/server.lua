@@ -106,7 +106,7 @@ CanUse = function(source, identifier, itemName, data)
             if count > 0 then
 				TriggerClientEvent('szymczakovv:IsWeapon', _source, itemName)
             else
-                xPlayer.showNotification("Nie posiadasz tego przedmiotu! - Usunięto wpis z bazy danych")
+                xPlayer.showNotification("You don't have assigned item - deleted from database item")
                 DeleteFromSlot(source, identifier, data)
             end
         else
@@ -114,7 +114,7 @@ CanUse = function(source, identifier, itemName, data)
             if count > 0 then
                 return true
             else
-                xPlayer.showNotification("Nie posiadasz tego przedmiotu! - Usunięto wpis z bazy danych")
+                xPlayer.showNotification("You don't have assigned item - deleted from database item")
                 DeleteFromSlot(source, identifier, data)
             end
         end
