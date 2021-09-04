@@ -85,7 +85,7 @@ RegisterNetEvent('szymczakovv:IsWeapon')
 AddEventHandler('szymczakovv:IsWeapon', function(item)
     if GetGameTimer() > settings.timer[1] then
         settings.timer[1] = GetGameTimer() + 2000   
-        local weapon = item
+        local weapon = 'weapon_'..item
         local weaponHash = GetHashKey(weapon)
         local playerPed = PlayerPedId()
         if GetSelectedPedWeapon(playerPed) == weaponHash then
@@ -115,12 +115,10 @@ end
 
 RegisterNetEvent('szymczakovv:useItem')
 AddEventHandler('szymczakovv:useItem', function(item)
-    if not exports['esx_ambulancejob']:getDeathStatus() then
-        if GetGameTimer() > settings.timer[2] then
-            settings.timer[2] = GetGameTimer() + 2000    
-            TriggerServerEvent('esx:useItem', item)
-        end
-    end
+	if GetGameTimer() > settings.timer[2] then
+	    settings.timer[2] = GetGameTimer() + 2000    
+	    TriggerServerEvent('esx:useItem', item)
+	end
 end)
 
 Select = function(who, val)
