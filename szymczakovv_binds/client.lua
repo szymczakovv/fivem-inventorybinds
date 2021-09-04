@@ -131,29 +131,29 @@ openBindManage = function()
     local elements = {}
     ESX.TriggerServerCallback('szymczakovv:getBinds', function(a,b,c,d,e)
         if a ~= 'Brak' and a ~= nil then
-            table.insert(elements, { label = '[1] '..tostring(a)..' - Naciśnij aby usunąć', value = '1' })
+            table.insert(elements, { label = '[1] '..tostring(a)..' - Press to delete', value = '1' })
         else
-            table.insert(elements, { label = '[1] Brak przypisanego klawisza pod item'})
+            table.insert(elements, { label = '[1] Item is not assigned'})
         end
         if b ~= 'Brak' and b ~= nil then
-            table.insert(elements, { label = '[2] '..tostring(b)..' - Naciśnij aby usunąć', value = '2' })
+            table.insert(elements, { label = '[2] '..tostring(b)..' - Press to delete', value = '2' })
         else
-            table.insert(elements, { label = '[2] Brak przypisanego klawisza pod item'})
+            table.insert(elements, { label = '[2] Item is not assigned'})
         end
         if c ~= 'Brak' and c ~= nil then
-            table.insert(elements, { label = '[3] '..tostring(c)..' - Naciśnij aby usunąć', value = '3' })
+            table.insert(elements, { label = '[3] '..tostring(c)..' - Press to delete', value = '3' })
         else
-            table.insert(elements, { label = '[3] Brak przypisanego klawisza pod item'})
+            table.insert(elements, { label = '[3] Item is not assigned'})
         end
         if d ~= 'Brak' and d ~= nil then
-            table.insert(elements, { label = '[4] '..tostring(d)..' - Naciśnij aby usunąć', value = '4' })
+            table.insert(elements, { label = '[4] '..tostring(d)..' - Press to delete', value = '4' })
         else
-            table.insert(elements, { label = '[4] Brak przypisanego klawisza pod item'})
+            table.insert(elements, { label = '[4] Item is not assigned'})
         end
         if e ~= 'Brak' and e ~= nil then
-            table.insert(elements, { label = '[5] '..tostring(e)..' - Naciśnij aby usunąć', value = '5'})
+            table.insert(elements, { label = '[5] '..tostring(e)..' - Press to delete', value = '5'})
         else
-            table.insert(elements, { label = '[5] Brak przypisanego klawisza pod item'})
+            table.insert(elements, { label = '[5] Item is not assigned'})
         end
     end)
 
