@@ -118,7 +118,6 @@ end
 
 # SOCIAL MEDIA:
  * https://discord.gg/wrSqK6k
- * https://instagram.com/ou7_szymczakovv
  * https://twitch.tv/szymczakovv 
  * https://www.youtube.com/channel/UCKOp_1PXXfXHgT_01jGCKLg
  * https://twitter.com/szymczakovv
